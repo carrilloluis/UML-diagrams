@@ -1,0 +1,13 @@
+@startuml
+	skin rose
+	hide footbox
+
+	actor "<u>:Recepcionista</u>" as A1
+	participant "<u> : Hotel</u>" as P1
+	participant "<u>r : Reservación</u>" as P2
+
+
+	A1 -> P1: ReservarPieza ( int, String, String )
+	P1 -> P2: Reservacion ( String, int, Cliente, Pieza )
+
+@enduml
