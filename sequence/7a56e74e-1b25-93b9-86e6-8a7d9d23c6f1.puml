@@ -1,0 +1,12 @@
+@startuml
+	' Sequenz diagramm [DE]
+	hide footbox
+	participant ":A" as A
+	participant ":B" as B
+	
+	A -> B : synchroner Operationsaufruf
+	A -> B : asynchroner Operationsaufruf
+	A -> B : synchroner Operationsaufruf
+	A <-- B : ...mit Antwort
+
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+
+	skin rose
+	hide footbox
+
+	participant "<u>:ClaseA</u>" as P1
+	participant "<u>:ClaseB</u>" as P2
+
+	-> P1 : mensaje1 ( )
+	P1 -> P2 : mensaje2 ( )
+	P1 -> P2 : mensaje3 ( )
+@enduml

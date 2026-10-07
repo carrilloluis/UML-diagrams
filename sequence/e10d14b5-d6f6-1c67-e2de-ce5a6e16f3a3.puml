@@ -1,0 +1,19 @@
+@startuml
+
+	skin rose
+	hide footbox
+
+	participant Encargado as A1
+	participant Cliente as A2
+	participant Video as A3
+	
+	A2 -> A3 : Analizar videos
+	A3 -> A2 : Video elegido
+	A2 -> A1 : Entregar Video
+	A1 <- A1 : Recolectar datos
+	A1 -> A2 : Pide datos
+	A2 -> A1 : Proporcionar datos
+	A1 <- A1 : Registrar datos
+	A1 -> A2 : Prestar video
+
+@enduml

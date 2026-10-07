@@ -1,0 +1,13 @@
+@startuml 
+
+	hide circle
+	skin rose
+
+	mainframe sd Lifelines
+		hide footbox
+
+		participant "<u>Self</u>"
+		participant "<u>Lifeline</u>"
+		participant "<u>Instance :Class</u>"
+
+@enduml

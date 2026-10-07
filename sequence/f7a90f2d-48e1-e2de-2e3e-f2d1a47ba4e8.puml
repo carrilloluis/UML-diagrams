@@ -1,0 +1,16 @@
+@startuml
+
+	hide footbox
+
+	participant "<u>Pedro : Cliente</u>" as P1
+	participant "<u>Roberto : Mesero</u>" as P2
+	participant "<u>Jaime : Cocinero</u>" as P3
+	participant "<u>Rene : Cajero</u>" as P4
+
+	P1 -> P2 : Pide comida
+	P2 -> P3 : Pide comida
+	P1 <- P2 : Sirve vino
+	P2 <- P3 : Entrega
+	P1 <- P2 : Sirve comida
+	P1 x-> P4 : Paga 
+@enduml
