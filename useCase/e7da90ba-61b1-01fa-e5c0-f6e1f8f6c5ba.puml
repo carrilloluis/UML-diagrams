@@ -1,0 +1,32 @@
+@startuml
+	skin rose
+	left to right direction
+	skinparam shadowing false
+
+	actor :Customer: as A1
+	actor :Technician: as A2
+	actor :Bank: as A3
+
+	rectangle "Bank ATM" {
+		usecase (Check Balances) as U1
+		usecase (Deposit Funds) as U2
+		usecase (Withdraw Cash) as U3
+		usecase (Transfer Funds) as U4
+		usecase (Maintance) as U5
+		usecase (Repair) as U6
+	}
+	A1 -- U1
+	A1 -- U2
+	A1 -- U3
+	A1 -- U4
+
+	A2 -- U5
+	A2 -- U6
+
+	U1 -- A3
+	U2 -- A3
+	U3 -- A3
+	U4 -- A3
+	U5 -- A3
+	U6 -- A3
+@enduml
