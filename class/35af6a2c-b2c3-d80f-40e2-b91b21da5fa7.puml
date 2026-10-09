@@ -1,0 +1,80 @@
+@startuml
+	skin rose
+	hide circle
+	skinparam linetype ortho
+
+	class Game {
+		+ entities
+		---
+		+ reset()
+		+ playGame()
+		- gameLoop()
+		- update()
+		- draw()
+	}
+
+	class Lander {
+		+ controller
+		+ expireAt
+		---
+		+ draw()
+		+ update()
+		+ land()
+		+ getBounds()
+	}
+
+	class Point {
+		+ expireAt
+		---
+		+ draw ()
+	}
+
+	class Line {
+		+ expireAt
+		---
+		+ draw ()
+		+ isPointBelow ()
+	}
+
+	class Circle {
+		+ expireAt
+		---
+		+ draw()
+	}
+
+	class Text {
+		+ expireAt
+		---
+		+ draw()
+	}
+
+	class RngController {
+		- keys
+		+ Down
+		+ Up
+		+ Left
+		+ Right
+		---
+		+ update()
+	}
+
+	class KeyController {
+		- keys
+		+ Down
+		+ Up
+		+ Left
+		+ Right
+	}
+
+	class "window.onload()" as c1
+	
+	Game "0..n" --> Lander
+	Lander "1 " --> RngController 
+	Lander --> KeyController
+
+	Game -r-> Point
+	Game --> Line
+	Game --> Circle
+	Game --> Text
+	Game <-- "1" c1 
+@enduml
