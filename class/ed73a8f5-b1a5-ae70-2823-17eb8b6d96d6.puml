@@ -1,0 +1,61 @@
+@startuml
+	hide circle
+	skin rose
+	skinparam linetype ortho
+
+	class Teller {
+		- customer : Customer
+		- deposit : double
+		---
+		+ newAccount( cust:Customer, acctNum : int, deposit : double ): void
+		+ deposit( cust:Customer, acctNum : int, deposit : double ): void
+		+ withdraw( cust:Customer, acctNum : int, withdraw : double ): void
+		+ balanceInquiry( cust:Customer, acctNum : int, balance : double ): void
+		+ closeAccount( cust: Customer, acctNum : int ): void
+	}
+	class Person {
+		# name : String
+		# gender : String
+		# address : String
+		# age : int
+		---
+		+ setName( name : String ): void
+		+ getName(): String
+		+ setGender( gender: String ): void
+		+ getGender(): String
+		+ setAddress( address : String ): void
+		+ getAddress(): String
+		+ setAge( age: int ): void
+		+ getAge(): int
+	}
+
+	class Account {
+		- accountId : int
+		- balance : double
+		---
+		+ setAccountId( accountId : int): void
+		+ getAccountId(): int
+		+ setBalance( balance:double ): void
+		+ getBalance(): double
+		+ computeDeposit( deposit : double ): double
+		+ computeWithdraw( withdraw : double ):double // return balance - withdraw
+		+ computeBalance(): double
+		+ closeAccount(): void
+	}
+
+	class Customer {
+		- bankAccount : Account
+		- person : Person
+		---
+		+ setName( name : String ): void
+		+ getName() : String
+		+ setBankAccount ( bankAccount : Account): void
+		+ getBankAccount(): Account
+		+ setAddress( address : String): void
+		+ getAddress(): String
+	}
+
+	Teller -d-> Customer : has a
+	Person <.. Customer : is a
+	Customer -r-> Account : has a
+@enduml
