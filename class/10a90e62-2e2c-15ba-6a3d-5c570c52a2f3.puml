@@ -1,0 +1,17 @@
+@startuml
+	hide circle
+	hide empty members
+
+	class User {
+		# counter
+		+ Forename
+		+ Surname
+		+ HashedPassword
+		- Salt
+		---
+		+ Login ( user, password )
+		+ Logout ( )
+		+ Register ( )
+	}
+
+@enduml
