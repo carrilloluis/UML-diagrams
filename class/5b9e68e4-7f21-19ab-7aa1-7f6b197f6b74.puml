@@ -1,0 +1,36 @@
+@startuml
+	skin rose
+	hide circle
+	hide empty members
+	skinparam linetype ortho
+	'Computer Vision Database Diagram
+	class BlobTable {
+		+ blobTableId : int
+		+ blobName : String
+	}
+	class BlobTree {
+		+ blobTreeId : int
+		+ blobTableId : int
+		+ contourId : int
+	}
+	class TreeNode {
+		+ treeNodeId : int
+		+ blobTreeId : int
+		+ parentId : int
+		+ symbol : char
+		# beginIndex : int
+		# handlePartner : int
+	}
+	class Metrics {
+		+ metricsId : int
+		+ treeNodeId : int
+		+ length : float
+		+ width : float
+		+ area : float
+	}
+
+	BlobTable "1  " <|-- "n  " BlobTree 
+	BlobTree "1  " <|-- "n  " TreeNode
+	TreeNode "1  " <|-- "n  " TreeNode
+	TreeNode "1  " <|-- "1  " Metrics
+@enduml
