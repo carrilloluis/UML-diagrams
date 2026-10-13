@@ -1,0 +1,46 @@
+@startuml LAYOUT_TOP_DOWN
+	left to right direction
+	skin rose
+	hide circle
+	hide empty members
+	skinparam linetype ortho
+
+	note "_componenteVisual.dibujar ( );" as N1
+	note as N2
+		super.dibujar ( );
+		dibujarBorde ( );
+	end note
+	
+	class ComponenteVisual {
+		--
+		+ operación()
+	}
+	class Decorador {
+		--
+		+ Decorador( componente : ComponenteVisual )
+		+ operación()
+	}
+	class DecoradorDesplazamiento {
+		- posiciónDesplazamiento
+		--
+		+ dibujar()
+		+ desplazarA()
+	}
+	class DecoradorBorde {
+		- tamañoBorde
+		--
+		+ dibujar ( )
+		+ dibujarBorde ( )
+	}
+	class VistaDeTexto {
+		--
+		+ operación()
+	}
+
+	ComponenteVisual <|-- (VistaDeTexto, Decorador)
+	Decorador <|-u- (DecoradorDesplazamiento, DecoradorBorde)
+	/' - _componenteVisual '/
+	ComponenteVisual <--o Decorador   
+	Decorador .. N1
+	DecoradorBorde .. N2
+@enduml
