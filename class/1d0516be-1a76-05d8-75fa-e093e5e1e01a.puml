@@ -1,0 +1,23 @@
+@startuml
+	' __transcripter__ = Luis/Carrillo/Gutiérrez
+	skin rose
+	hide circle
+	hide empty members
+	skinparam linetype ortho
+
+	+interface "<<Interface>>\n<b>Persona</b>" as C1 {
+		---
+		+ gestionar ( )
+	}
+	' public
+	+class "<b>Empresa</b>" as C2 {
+		+ nombre : String
+	}
+	' public
+	+class "<b>Gerente</b>" as C3 {
+		+ nombre : String
+	}
+	C3 ..|> C1
+	C3 "1 " <-d-* "1 " C2 : "+ gerente"
+
+@enduml
