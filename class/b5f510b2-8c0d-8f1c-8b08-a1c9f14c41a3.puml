@@ -1,0 +1,63 @@
+@startuml
+	skin rose
+	hide circle
+	hide empty members
+	skinparam linetype ortho
+	' /Little Shop/ transcripted by Luis Carrillo
+	class Customer {
+		- name : String
+		- address : String
+	}
+	class Order {
+		- date : Date
+		- status : String
+		---
+		+ calcSubTotal ( )
+		+ calcTax ( )
+		+ calcTotal ( )
+		+ calcTotalWeight ( )
+	}
+	class OrderDetail {
+		- quantity : float
+		- taxStatus : String
+		---
+		+ calcSubTotal ( )
+		+ calcWeight ( )
+		+ calcTax ( )
+	}
+	class Item {
+		- shippingWeight : float
+		- description : String
+		---
+		+ getPriceForQuantity ( )
+		+ getTax ( )
+		+ inStock ( )
+	}
+	class Payment { 
+		- amount : float 
+	}
+	class Cash { 
+		- cashTendered : float
+	}
+	class Check {
+		- name : String
+		- bankId : String
+		---
+		+ authorized ( )
+	}
+	class Credit {
+		- number : String
+		- type : String
+		- expDate : Date
+		---
+		+ authorized ( )
+	}
+	
+	Customer "1 " -- "0..* " Order
+	Order "1 " o-d- "1..* "  OrderDetail : line item
+	OrderDetail "0..* " --> "1 " Item
+	Order "1 " -- "1..* " Payment
+	Payment <|-u- Cash
+	Payment <|-l- Check
+	Payment <|-- Credit
+@enduml
