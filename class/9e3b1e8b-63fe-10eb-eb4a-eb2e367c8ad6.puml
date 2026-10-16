@@ -1,0 +1,27 @@
+@startuml
+	' __transcripter__ = Luis/Carrillo/Gutiérrez
+	skin rose
+	hide circle
+	hide empty members
+
+	class Triángulo {
+		- base : double
+		- altura : double
+		- área : double 
+		--
+		+ Triángulo ( );
+		- void calcularÁrea ( );
+		+ double getBase ( );
+		+ double getAltura ( );
+		+ double getÁrea ( );
+		+ void setBase ( double value );
+		+ void setAltura ( double value );
+		+ void setÁrea ( double value )
+	}
+	class Principal {
+		--
+		+ void main(String[] args)
+	}
+	Triángulo <-- Principal
+@enduml
+
