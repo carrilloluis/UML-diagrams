@@ -1,0 +1,32 @@
+@startuml
+	' __transcripter__ = Luis/Carrillo/Gutiérrez
+	skin rose
+	hide circle
+	hide empty members 
+	skinparam linetype ortho
+	' command class diagram
+
+	class Chef {
+		---
+		+ cook()
+	}
+	class "  Client  " as Client {
+	}
+	class Waiter {
+		+ execute()
+	}
+	class Order {
+		---
+		+ execute()
+	}
+	interface Command <<interface>> {
+		---
+		+ execute()
+	}
+
+	Chef <-- Client
+	Client --> Order : "Makes "
+	Chef -- Order
+	Order --o Waiter
+	Command <|-- Order
+@enduml

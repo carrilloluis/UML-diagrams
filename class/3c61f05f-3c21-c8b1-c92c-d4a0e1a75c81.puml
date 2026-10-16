@@ -1,0 +1,24 @@
+@startuml 
+	' __transcripter__ = Luis/Carrillo/Gutiérrez
+	hide circle
+	skin rose
+	hide empty members
+	'skinparam classAttributeIconSize 0
+	skinparam linetype ortho
+
+	+interface IVolante <<Interface>> {
+		---
+		+ girar ( )
+	}
+
+	' IPito
+	+interface IBocina <<Interface>> {
+		---
+		+ pitar ( )
+	}
+
+	class "  Coche  " as Coche
+
+	IVolante <|... Coche
+	IBocina <|.. Coche
+@enduml
