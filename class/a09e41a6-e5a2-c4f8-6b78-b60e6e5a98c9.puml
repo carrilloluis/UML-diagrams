@@ -1,0 +1,19 @@
+@startuml
+	skin rose
+	hide circle
+	hide empty members
+
+	class FiguraGeométrica {
+		+ String nombre;
+	}
+	class Cuadrado extends FiguraGeométrica {
+		+ float lado;
+	}
+	class Triángulo extends FiguraGeométrica {
+		+ float altura;
+		+ float base;
+	}
+	class Círculo extends FiguraGeométrica {
+		+ float radio;
+	}
+@enduml
