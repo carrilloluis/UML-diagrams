@@ -1,0 +1,37 @@
+@startuml
+	' __transcripter__ = Luis/Carrillo/Gutiérrez
+	' Difference *class* and *interface* in J4v4
+	skin rose
+	hide circle
+	hide empty members
+	skinparam linetype ortho
+
+	interface GeometricObject <<interface>> {
+		--
+		+ getPerimeter ( ) : double;
+		+ getArea ( ) : double
+	}
+
+	class Circle {
+		# radius : double = 1.0
+		--
+		+ Circle ( radius : double );
+		+ getPerimeter ( ) : double;
+		+ getArea ( ) : double
+	}
+
+	interface Resizable <<interface>> {
+		--
+		+resize ( percent : int )
+	}
+
+	class ResizableCircle {
+		--
+		+ ResizableCircle ( radius : double);
+		+ resize ( percent : int )
+	}
+
+	Resizable <|.. ResizableCircle
+	GeometricObject <|.. Circle
+	Circle <|-- ResizableCircle
+@enduml
