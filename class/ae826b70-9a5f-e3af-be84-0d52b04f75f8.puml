@@ -1,0 +1,29 @@
+@startuml
+
+	hide circle
+	skin rose
+	skinparam linetype ortho
+	
+	interface IChair <<interface>> {
+		+ hasLegs()
+		+ sitOn()
+	}
+	
+	class VictorianChair {
+		...
+		---
+		+ hasLegs()
+		+ sitOn()
+	}
+
+	class ModernChair {
+		...
+		---
+		+ hasLegs()
+		+ sitOn()
+	}
+
+	IChair <|... ModernChair
+	IChair <|... VictorianChair
+@enduml
+
