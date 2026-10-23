@@ -1,0 +1,18 @@
+@startuml
+	hide circle
+	skin rose
+	skinparam shadowing false
+
+	class "Class" {
+		{static} String id
+		String make
+		year : Integer
+		--
+		+public ( )
+		void drive ( )
+		-private ( )
+		#protected ( )
+		~package private ( )
+		{abstract} void methods ( )
+	}
+@enduml
