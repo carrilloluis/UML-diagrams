@@ -1,0 +1,21 @@
+@startuml
+	skin rose
+
+	class Personne
+	{
+		nom : string
+		naissance : Date
+		age : int
+	}
+	class Groupe
+	{
+		théme : string
+		création : Date
+	}
+	class ExpériencesPro
+	{
+		entrepise : string
+		entrée : Date
+		sortie : Date
+	}
+@enduml
