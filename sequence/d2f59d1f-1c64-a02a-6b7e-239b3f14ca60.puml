@@ -1,0 +1,12 @@
+@startuml
+	skin rose
+	hide footbox
+	' Inspired by websequencediagrams.com
+
+	participant Andrew as a1
+	participant China as a2
+	a1 -> a2 : Says Hello
+	Note over a2: China thinks about it
+	a2 --> a1 : How are you?
+	a1 -> a2 : I am good thanks!
+@enduml
