@@ -1,0 +1,15 @@
+@startuml
+	skin rose
+	hide circle
+	skinparam shadowing false
+
+	class Book
+	{
+		- title : String
+		- authors : String[ ]
+		--
+		+ getTitle ( ) : String
+		+ getAuthors ( ) : String[ ]
+		+ addAuthor ( pName )
+	}
+@enduml
