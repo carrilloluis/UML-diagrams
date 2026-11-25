@@ -1,0 +1,28 @@
+@startuml
+	skin rose
+	hide circle
+	skinparam shadowing false
+
+	' Builder pattern - Class diagram
+	' transpiler by Luis Carrillo Gutiérrez
+
+	interface IBuilder {
+		--
+		+ build ( ) : TargetObject
+	}
+
+	class ObjectBuilder  {
+		---
+		+ build ( ) : TargetObject
+	}
+
+	object OtherObject1
+	object OtherObject2
+	class TargetObject {}
+	
+	ObjectBuilder -|> IBuilder : " Extends " 
+	ObjectBuilder -d-> TargetObject : "  Build  "
+	TargetObject -d-> OtherObject1
+	TargetObject -d-> OtherObject2
+@enduml
+	' 
