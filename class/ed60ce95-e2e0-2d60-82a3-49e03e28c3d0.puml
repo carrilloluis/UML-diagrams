@@ -1,8 +1,12 @@
 @startuml
+	skin rose
+	hide circle
+	skinparam shadowing false
+
 	class Person
 	{
 		- name : String
-		- birth : Date
+		- birthDate : Date
 		--
 		+ getName ( ) : String
 		+ setName ( pName ) : void
