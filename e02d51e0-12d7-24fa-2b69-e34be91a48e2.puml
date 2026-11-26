@@ -1,0 +1,41 @@
+@startuml
+	skin rose
+	hide circle
+	skinparam shadowing false
+	' Registro de HORA de INGRESO de los empleados / usuarios
+	' Ejemplo didáctico para un Entidad-Relación
+	' Luis Carrillo Gutiérrez 
+	entity Usuario {
+		id_usuario : Integer
+		nombre : String
+		apellido_paterno : String
+		apellido_materno : String
+		teléfono : String
+		' email
+		correo_electrónico : String
+		' clave
+		contraseña : varchar[14] 
+	}
+	entity TipoUsuario {
+		id_tipoUsuario : Integer | String
+		nombre : String
+	}
+	entity Hora {
+		id_hora : Integer
+		tipo : varchar
+		bloque : varchar
+		--
+		+ agregarHora ( )
+	}
+	entity Foto {
+		id_foto : Integer
+		nombre : varchar[32]
+		directorio : String
+		--
+		+ agregarFoto ( )
+	}
+	
+	Usuario ||--|{ Hora
+	Usuario ||-r-|{ Foto
+	Usuario ||-l-|| TipoUsuario
+@enduml
