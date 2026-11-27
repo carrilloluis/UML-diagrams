@@ -1,0 +1,25 @@
+@startuml
+	skin rose
+	hide circle
+	hide empty members
+	skinparam shadowing false
+	skinparam linetype ortho
+	' Extends between classes | Herencia entre clases
+	' Luis Carrillo Gutiérrez
+ 
+	class Person
+	{
+		String Name;
+	}
+	class Employee extends Person {}
+	class Client extends Person {}
+
+	class Person_
+	{
+		name : String
+	}
+	class Employee_
+	class Client_
+	Person_ <|-- Employee_
+	Person_ <|-- Client_
+@enduml
